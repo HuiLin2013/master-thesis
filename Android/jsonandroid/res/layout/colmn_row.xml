@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:id="@+id/displayTxtview">
+   
+  <TextView 
+      android:id="@+id/col1"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>  
+	
+    <TextView 
+      android:id="@+id/col2"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>
+  
+  <TextView 
+      android:id="@+id/col3"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:visibility="gone" />
+  
+  <TextView 
+      android:id="@+id/col4"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>
+  
+   <TextView 
+      android:id="@+id/col5"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/> 
+      
+   <TextView 
+      android:id="@+id/col6"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>  
+	
+   <TextView 
+      android:id="@+id/col7"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>
+  
+  <TextView 
+      android:id="@+id/col8"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>
+  
+  <TextView 
+      android:id="@+id/col9"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>
+  
+   <TextView 
+      android:id="@+id/col10"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:visibility="gone" /> 
+      <TextView 
+      android:id="@+id/col11"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>  
+	
+    <TextView 
+      android:id="@+id/col12"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>
+  
+  <TextView 
+      android:id="@+id/col13"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>
+  
+  <TextView 
+      android:id="@+id/col14"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>
+  
+   <TextView 
+      android:id="@+id/col15"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:visibility="gone" /> 
+      
+   <TextView 
+      android:id="@+id/col16"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>  
+	
+   <TextView 
+      android:id="@+id/col17"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/>
+  
+  <TextView 
+      android:id="@+id/col18"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:visibility="gone" />
+  
+  <TextView 
+      android:id="@+id/col19"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:visibility="gone" />
+  
+   <TextView 
+      android:id="@+id/col20"
+      android:layout_height="wrap_content"
+      android:layout_width="0dp"
+      android:layout_weight="1" 
+      android:visibility="gone"/> 
+    
+</LinearLayout>

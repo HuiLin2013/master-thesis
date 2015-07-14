@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/theme.default.css">
+	<script src="js/jquery-1.11.2.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script  src="js/jquery.tablesorter.js"></script>
+	<script  src="js/jquery.tablesorter.widgets.js"></script>
+	 
+ <!--<style>
+	table {
+	width: 100%;
+    border-collapse: collapse;
+			}
+
+	table, td, th {
+    border: 1px solid black;
+			}
+	</style>
+	-->
+	
+	<script type="text/javascript">   
+	 $(document).ready(function (){
+	
+     //Get parameter data from URI
+	 function getParameterByName(name) {
+    	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    	return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+     }    
+	 
+     /* Retrieve jsonUrl from (for example)*/
+     /* http://158.234.151.82/experiments/jsonHTML5.html?filename=num_5col_1000row */
+    	var file = getParameterByName('filename');
+        var jsonUrl = "";
+    	
+        if( file == ""){
+    		//jsonUrl = 'data/num_2col_1000row.json';
+                  jsonUrl = 'data/example.json';
+    	}else{
+    		jsonUrl = 'data/' + getParameterByName('filename') + '.json';
+    	}
+	    
+     
+        
+	/*
+	**Json sources 
+	*/	
+	//	var jsonUrl = 'num_1col_1000row.json';
+	//	var jsonUrl = 'num_1col_5000row.json'; 
+	//	var jsonUrl = 'num_1col_10000row.json';
+    //	var jsonUrl = 'num_5col_1000row.json';
+	//	var jsonUrl = 'num_5col_5000row.json'; 
+	//	var jsonUrl = 'num_5col_10000row.json';
+	//	var jsonUrl = 'num_10col_1000row.json';
+	//	var jsonUrl = 'num_10col_5000row.json'; 
+	//	var jsonUrl = 'num_10col_10000row.json';
+	//	var jsonUrl = 'str_1col_1000row.json';
+	//	var jsonUrl = 'str_1col_5000row.json'; 
+	//	var jsonUrl = 'str_1col_10000row.json';
+    //	var jsonUrl = 'str_5col_1000row.json';
+   	//	var jsonUrl = 'str_5col_5000row.json'; 
+	//	var jsonUrl = 'str_5col_10000row.json';
+	//	var jsonUrl = 'str_10col_1000row.json';
+	//	var jsonUrl = 'str_10col_5000row.json'; 
+	//	var jsonUrl = 'str_10col_10000row.json';
+	//	var jsonUrl = 'mix_5col_1000row.json';
+	//	var jsonUrl = 'mix_5col_5000row.json'; 
+	//	var jsonUrl = 'mix_5col_10000row.json';
+	//	var jsonUrl = 'mix_10col_1000row.json';
+	//	var jsonUrl = 'mix_10col_5000row.json'; 
+	//	var jsonUrl = 'mix_10col_10000row.json';
+
+    /*
+    **Performances Timers
+    */
+    	var loadStart;
+        var loadEnd;
+        var sortStart;
+        var sortEnd;
+        var filterStart;
+        var filterEnd;
+        
+        var today = new Date($.now());
+  	    
+  
+  	/*
+	**Load json data to table 
+	*/
+			$.ajax({
+      			url: jsonUrl,
+      			dataType: 'json',
+      			type: 'get',
+      			cache: true,
+      			success: function(data){
+      		 
+      	      
+      	       var totalData = data.length;
+      			    	    	
+      	      //Performance Timer for loading
+       	       loadStart = performance.now();
+      	    		
+      			tr = $('<tr/>');
+                $.each(data[0], function(header, value){
+                	   tr.append("<th>" + header + "</th>");	 
+                   });       
+                $('table thead').append(tr);
+     			$.each(data, function(index, object){				  
+      					tr = $('<tr/>');
+      	         		$.each(object, function(item, info){
+      	          			tr.append("<td>" + info + "</td>");	         
+      	         		});   		
+      	        $("table tbody").append(tr);            
+      			 });
+      			    			
+      		  //Performance Timer for loading
+              loadEnd = performance.now();
+             
+              document.getElementById("pageHeader1").innerHTML = "Loading " + totalData + " JSON entries with HTML5/jQuery at "
+              + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+              document.getElementById("pageHeader2").innerHTML = (loadEnd - loadStart) + " milliseconds (Loading)";
+           
+      		},
+      		complete: function()
+			{
+      			$('table').tablesorter({ 
+      				widgets: ['zebra', 'filter', 'stickyHeaders'],
+      				widgetOptions: {
+        					filter_columnFilters : true,
+        					stickyHeaders_offset: 0}
+   				 });
+      			
+      			$('table').bind("sortStart", function(){
+      			    //Performance Timer 
+      				sortStart = performance.now();
+      			}).bind("sortEnd", function(){
+      			    //Performance Timer 
+      				sortEnd = performance.now();
+      				document.getElementById("pageHeader3").innerHTML = (sortEnd - sortStart) + " milliseconds (Sorting)";
+      			});
+      			
+      			$('table').bind("filterStart", function(){
+      			    //Performance Timer 
+      				filterStart = performance.now();
+      			}).bind("filterEnd", function(){
+      			    //Performance Timer 
+      				filterEnd = performance.now();
+      				document.getElementById("pageHeader4").innerHTML = (filterEnd - filterStart) + " milliseconds (filtering)";
+      			});
+			}
+      		
+			});
+  
+  	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 });
+  </script>
+  <title>Json HTML5 Experiments</title>
+</head>
+<body>
+<div data-role = "header" data-theme = "b">
+<h1 id="pageHeader1"></h1>
+<h1 id="pageHeader2"></h1>
+<h1 id="pageHeader3"></h1>
+<h1 id="pageHeader4"></h1>
+</div>
+<table class="tablesorter" >
+<thead>
+</thead> 
+<tbody>
+</tbody>
+</table> 
+</body>
+</html>
+	        
