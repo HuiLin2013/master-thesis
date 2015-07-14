@@ -1,0 +1,17 @@
+{
+    "contents" : "data <- read.table(\"(CS)ETstr10col.txt\", header = TRUE)\n\nmax_y <- max(data)\nplot_colors <- c(\"black\", \"blue\", \"red4\")\npng(filename=\"(CS)ETstr10Col.png\", height = 1000, width = 1300, bg = \"white\")\nplot(data$HTML5_Loading, type = \"o\", col = plot_colors[1], pch=15,  ylim=c(0,max_y), axes=FALSE, ann=FALSE)\naxis(1, at=1:5, lab=c(\"100\", \"200\", \"300\", \"400\", \"500\"))\naxis(2, las=1, at=80*0:max_y, cex.axis = 1)\n\nbox()\nlines(data$Android_Loading, type=\"o\", pch=15, lty=2, col=plot_colors[1])\nlines(data$HTML5_Sorting, type=\"o\", pch=16, lty=1,  col=plot_colors[2])\nlines(data$Android_Sorting, type=\"o\", pch=16, lty=2,  col=plot_colors[2])   \nlines(data$HTML5_Filtering, type=\"o\", pch=17, lty=1, col=plot_colors[3])\nlines(data$Android_Filtering, type=\"o\", pch=17, lty=2,   col=plot_colors[3])\n\ntitle(main=\"Execution Time_Strings_10Columns (Case Study)\", col.main=\"red\", font.main=6)\ntitle(xlab= \"Number of rows\", col.lab=\"red\")\ntitle(ylab= \"Execution Time (ms) for Strings\", col.lab=\"red\")\nlegend(1, max_y, names(data), cex=1.5, col=c(\"black\", \"black\",\"blue\", \"blue\",\"red4\",\"red4\"), pch=c(15,15,16,16,17,17), lty=c(1,2,1,2,1,2));\n\n\ndev.off()",
+    "created" : 1436530124564.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1195853207",
+    "id" : "974049E8",
+    "lastKnownWriteTime" : 1436365545,
+    "path" : "C:/Users/linh/Desktop/R/R_plot/(CS)ETstr10col.R",
+    "project_path" : "(CS)ETstr10col.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

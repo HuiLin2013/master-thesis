@@ -1,0 +1,16 @@
+{
+    "contents" : "data <- read.table(\"ETmix4col.txt\", header = TRUE)\n\nmax_y <- max(data)\nplot_colors <- c(\"black\", \"blue\", \"red4\")\npng(filename=\"ETmix4Col.png\", height = 1000, width = 1450, bg = \"white\")\nplot(data$HTML5_Loading, type = \"o\", col = plot_colors[1], pch=15,  ylim=c(0,max_y), axes=FALSE, ann=FALSE)\naxis(1, at=1:5, lab=c(\"2000\", \"4000\", \"6000\", \"8000\", \"10000\"))\naxis(2, las=1, at=2000*0:max_y, cex.axis = 0.8)\n\nbox()\nlines(data$Android_Loading, type=\"o\", pch=15, lty=2, col=plot_colors[1])\nlines(data$HTML5_Sorting, type=\"o\", pch=16, lty=1,  col=plot_colors[2])\nlines(data$Android_Sorting, type=\"o\", pch=16, lty=2,  col=plot_colors[2])   \nlines(data$HTML5_Filtering, type=\"o\", pch=17, lty=1, col=plot_colors[3])\nlines(data$Android_Filtering, type=\"o\", pch=17, lty=2,   col=plot_colors[3])\n\ntitle(main=\"Execution Time_Mix of Numbers and Strings_4Columns\", col.main=\"red\", font.main=6)\ntitle(xlab= \"Number of rows\", col.lab=\"red\")\ntitle(ylab= \"Execution Time (ms) for Mix of Numbers and Strings\", col.lab=\"red\")\nlegend(1, max_y, names(data), cex=1.5, col=plot_colors, pch=15:17, lty=1:2);\n\ndev.off()\n",
+    "created" : 1433368431822.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1148457673",
+    "id" : "A26CD52",
+    "lastKnownWriteTime" : 1433368478,
+    "path" : "~/Desktop/R /R_plot/ETmix4col.R",
+    "project_path" : "ETmix4col.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

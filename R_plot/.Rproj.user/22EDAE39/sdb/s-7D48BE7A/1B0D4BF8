@@ -1,0 +1,16 @@
+{
+    "contents" : "HTML5_Num\tAndroid_Num\tHTML5_Str\tAndroid_Str\tHTML5_Mix\tAndroid_Mix\n343  159\t342\t161\t348\t157\n373\t228\t394\t198\t437\t230\n420\t315\t454\t265\t441\t260\n462\t389\t470\t327\t453\t306\n497\t436\t498\t423\t479\t369",
+    "created" : 1433369154851.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "149287519",
+    "id" : "1B0D4BF8",
+    "lastKnownWriteTime" : 1433369354,
+    "path" : "~/Desktop/R /R_plot/PCloading4col.txt",
+    "project_path" : "PCloading4col.txt",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}
